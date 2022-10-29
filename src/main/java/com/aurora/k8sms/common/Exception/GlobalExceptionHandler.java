@@ -24,6 +24,12 @@ public class GlobalExceptionHandler {
         return R.error(HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
+    @ExceptionHandler(YamlConvertException.class)
+    public R handlerYamlConvertException(Exception e){
+        logger.error(e.getMessage(),e);
+        return R.error(1001,"yaml 转换出错");
+    }
+
     @ExceptionHandler(NoHandlerFoundException.class)
     public R handlerNoFoundException(Exception e) {
         logger.error(e.getMessage(), e);

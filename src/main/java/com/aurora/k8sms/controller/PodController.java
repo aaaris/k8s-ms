@@ -27,7 +27,7 @@ public class PodController {
      *
      * @return Respond
      */
-    @ApiOperation(value = "查询 all pods", notes = "查询所有命名空间下的 pods")
+    @ApiOperation(value = "查询 pod", notes = "查询所有命名空间下的 pods")
     @GetMapping("")
     public R getAllPods() throws ApiException, IOException {
         log.info("getAllPods");
@@ -43,7 +43,7 @@ public class PodController {
      * @param namespace pod's namespace
      * @return Respond
      */
-    @ApiOperation(value = "查询pod", notes = "根据 namespace 查询 pod")
+    @ApiOperation(value = "查询 pod", notes = "根据 namespace 查询 pod")
     @GetMapping("/{namespace}")
     public R getAllPodsByNamespace(@PathVariable String namespace) throws ApiException, IOException {
         log.info("getAllPodsByNamespace namespace={}", namespace);
