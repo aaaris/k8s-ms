@@ -22,7 +22,6 @@ public class NamespaceController {
     @ApiOperation(value = "查询 namespace", notes = "查询所有命名空间")
     @GetMapping("")
     public R getAll() throws  ApiException {
-        // TODO: 测试接口
         List<V1Namespace> namespaceList = namespaceSerivce.list();
         return R.success(namespaceList);
     }
@@ -30,8 +29,7 @@ public class NamespaceController {
     @ApiOperation(value="新增 namespace",notes = "根据name新建namespace")
     @PostMapping("/{name}")
     public R add(@PathVariable String name) throws  ApiException {
-        // TODO: 测试接口
-        V1Namespace namespace = namespaceSerivce.create(name);
+         V1Namespace namespace = namespaceSerivce.create(name);
         return R.success(namespace);
     }
 

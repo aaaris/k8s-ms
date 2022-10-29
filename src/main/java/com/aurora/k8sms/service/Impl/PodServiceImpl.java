@@ -31,10 +31,9 @@ public class PodServiceImpl implements PodService {
     }
 
     @Override
-    public V1Pod getByName(String name, String namespace) throws ApiException {
+    public V1Pod readByName(String name, String namespace) throws ApiException {
         CoreV1Api api = new CoreV1Api();
-        V1Pod pod = api.readNamespacedPod(name, namespace, null);
-        return pod;
+        return api.readNamespacedPod(name, namespace, null);
     }
 
     @Override

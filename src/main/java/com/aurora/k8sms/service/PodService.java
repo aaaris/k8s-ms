@@ -33,7 +33,7 @@ public interface PodService {
      * @param name
      * @return a pod
      */
-    V1Pod getByName(String namespace, String name) throws ApiException;
+    V1Pod readByName(String namespace, String name) throws ApiException;
 
     /**
      * create a new pod in namespace

@@ -31,7 +31,7 @@ public class swaggerConfig {
                                 .description("k8s-ms 项目接口文档")
                                 // 联系人
                                  .version("v1.0")
-                                .contact(new Contact("aaaris","https://aaaris.github.com","2997600742@qq.com"))
+                                .contact(new Contact("aaaris","https://aaaris.github.io","2997600742@qq.com"))
                                 .title("API 测试文档")
                                 .license("Apache 2.0")
                                 .licenseUrl("https://www.apache.org/licenses/LICENSE-2.0")
