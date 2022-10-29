@@ -6,17 +6,19 @@ import io.kubernetes.client.openapi.models.V1Namespace;
 import java.io.IOException;
 import java.util.List;
 
-public interface NamespaceSerivce {
+public interface NamespaceService {
     /**
      * list all namespace
+     *
      * @return
      */
-    List<V1Namespace> list() throws IOException, ApiException;
+    List<V1Namespace> list() throws ApiException;
 
     /**
      * create a new namespace
+     *
      * @param name
      * @return
      */
-    V1Namespace create(String name) throws IOException, ApiException;
+    V1Namespace create(String name) throws ApiException;
 }

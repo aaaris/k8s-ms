@@ -1,6 +1,3 @@
-server:
-  port: 8080
-
 spring:
-  application:
-    name: k8sms
+  profiles:
+    active: dev

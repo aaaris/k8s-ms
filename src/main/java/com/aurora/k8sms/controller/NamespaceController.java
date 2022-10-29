@@ -1,7 +1,7 @@
 package com.aurora.k8sms.controller;
 
 import com.aurora.k8sms.common.utils.R;
-import com.aurora.k8sms.service.NamespaceSerivce;
+import com.aurora.k8sms.service.NamespaceService;
 import io.kubernetes.client.openapi.ApiException;
 import io.kubernetes.client.openapi.models.V1Namespace;
 import lombok.extern.slf4j.Slf4j;
@@ -16,17 +16,17 @@ import java.util.List;
 @RequestMapping("/api/v1/namespace")
 public class NamespaceController {
     @Autowired
-    private NamespaceSerivce namespaceSerivce;
+    private NamespaceService namespaceSerivce;
 
     @GetMapping("")
-    public R getAllNamespace() throws IOException, ApiException {
+    public R getAll() throws  ApiException {
         // TODO: 测试接口
         List<V1Namespace> namespaceList = namespaceSerivce.list();
         return R.success(namespaceList);
     }
 
     @PostMapping("/{name}")
-    public R add(@PathVariable String name) throws IOException, ApiException {
+    public R add(@PathVariable String name) throws  ApiException {
         // TODO: 测试接口
         V1Namespace namespace = namespaceSerivce.create(name);
         return R.success(namespace);

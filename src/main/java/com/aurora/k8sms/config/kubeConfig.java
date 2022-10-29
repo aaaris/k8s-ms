@@ -9,14 +9,14 @@ import io.kubernetes.client.openapi.models.V1Pod;
 import io.kubernetes.client.openapi.models.V1PodList;
 import io.kubernetes.client.util.Config;
 
+import javax.annotation.PostConstruct;
 import java.io.IOException;
 
 public class kubeConfig {
 
-    public static ApiClient getApiClient() throws IOException {
+    public static void init() throws IOException {
         ApiClient client = Config.defaultClient();
         Configuration.setDefaultApiClient(client);
-        return client;
     }
 
     public static ProtoClient getProtoClient() throws IOException {
