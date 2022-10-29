@@ -63,7 +63,7 @@ public class PodController {
     @GetMapping("/{namespace}/{name}")
     public R getPodByNameByNamespace(@PathVariable String namespace, @PathVariable String name) throws ApiException, IOException {
         log.info("getPodByNameByNamespace namespace={} name={}", namespace, name);
-        V1Pod pod = podService.getByName(name, namespace);
+        V1Pod pod = podService.readByName(name, namespace);
         return R.success(pod.getMetadata());
     }
 
