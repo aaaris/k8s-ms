@@ -12,22 +12,14 @@ import org.yaml.snakeyaml.constructor.DuplicateKeyException;
 
 @RestControllerAdvice
 public class GlobalExceptionHandler {
-    private Logger logger = LoggerFactory.getLogger(getClass());
-
-    /**
-     * 处理自定义异常
-     */
+    private final Logger logger = LoggerFactory.getLogger(getClass());
 
     @ExceptionHandler(ApiException.class)
     public R handlerApiException(Exception e) {
-        logger.error(e.getMessage(), e);
-        return R.error(HttpStatus.INTERNAL_SERVER_ERROR);
-    }
-
-    @ExceptionHandler(YamlConvertException.class)
-    public R handlerYamlConvertException(Exception e){
-        logger.error(e.getMessage(),e);
-        return R.error(1001,"yaml 转换出错");
+        ApiException apiException = (ApiException) e;
+        logger.error(apiException.getMessage(), apiException);
+        logger.error(apiException.getResponseBody());
+        return R.success(apiException.getResponseBody());
     }
 
     @ExceptionHandler(NoHandlerFoundException.class)
