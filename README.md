@@ -66,7 +66,7 @@ k8s-ms 是一个基于 [client-java](https://github.com/kubernetes-client/java) 
 4. （源码打包部署）进入项目目录，在控制台输入 `mvn mvn clean package`打包项目
 5. （源码打包部署）打包后，将生成的 `target` 目录出现的 `k3s-x.x.x-SNAPSHOT.jar` 文件迁移目标服务器
 6. （源码打包部署）确保目标服务器安装了 `Java8` 及以上环境
-7. （源码打包部署）
+7. （源码打包部署）使用 `java -jar <在target目录jar包>` 运行Web服务器
 
 # 常见错误
 
