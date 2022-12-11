@@ -1,6 +1,7 @@
 # 项目简介
 
-k8s-ms 是一个基于 [client-java](https://github.com/kubernetes-client/java) 库，使用 [SpringBoot](https://github.com/spring-projects/spring-boot) 搭建的容器运行管理系统。
+k8s-ms 是一个基于 [client-java](https://github.com/kubernetes-client/java)
+库，使用 [SpringBoot](https://github.com/spring-projects/spring-boot) 搭建的容器运行管理系统。
 
 ## 功能介绍
 
@@ -14,14 +15,15 @@ k8s-ms 是一个基于 [client-java](https://github.com/kubernetes-client/java) 
 >
 > 对于使用 k3s 的用户，该配置文件通常位于 `/etc/rancher/k3s/k3s.yaml`
 
-## 使用技术
+## 技术选型
 
-| 技术栈            | 说明                    |
-|----------------|-----------------------|
-| SpringBoot Web | 快速搭建Web服务器            |
-| client-java    | 通过Kubernetes API 操作集群 |
-| Swagger3       | 自动化生成在线API文档，方便查阅调试   |
-| lombok         | 利用注解，快速生成get/set方法等   |
+| 技术栈            | 版本            | 说明                    |
+|----------------|---------------|-----------------------|
+| SpringBoot Web | 2.7.3         | 快速搭建Web服务器            |
+| client-java    | 15.0.1        | 通过Kubernetes API 操作集群 |
+| Swagger3       | 3.0.0         | 自动化生成在线API文档，方便查阅调试   |
+| lombok         | 1.18.24       | 利用注解，快速生成get/set方法等   | 
+| Java8          | jdk 1.8.0_281 | Java开发环境              | 
 
 # Api 接口文档
 
@@ -56,9 +58,9 @@ k8s-ms 是一个基于 [client-java](https://github.com/kubernetes-client/java) 
 3. 将该 `config` 文件拷贝到本地 `~/.kube/` 下（Windows系统为 `<当前用户目录>/.kube/`）
 4. 在 [releases](https://github.com/aaaris/k8s-ms/releases) 下载最近版本的 jar 包
 5. 确保本地安装了 `Java8` 及以上环境，且配置了系统环境变量
-6. 在下载目录，进入控制台，使用 `java -jar <对应版本下载jar包>` 运行Web服务器 
+6. 在下载目录，进入控制台，使用 `java -jar <对应版本下载jar包>` 运行Web服务器
 
->可选：源码搭建
+> 可选：源码搭建
 
 1. （源码搭建）使用 `git clone https://github.com/aaaris/k8s-ms.git` 克隆仓库
 2. （源码搭建）确保本地安装了 `maven`，且配置了系统环境变量
